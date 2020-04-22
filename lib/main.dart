@@ -22,7 +22,7 @@ class App extends StatelessWidget {
               color: Color.fromRGBO(20, 51, 51, 1),
             ),
             title: TextStyle(
-              fontSize: 24,
+              fontSize: 18,
               fontFamily: 'RobotoCondensed',
             )),
       ),
