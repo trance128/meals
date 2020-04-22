@@ -5,7 +5,7 @@ import '../models/meal.dart';
 
 class CategoryMealsScreen extends StatefulWidget {
   static const routeName = '/category-meals';
-  
+
   final List<Meal> availableMeals;
 
   CategoryMealsScreen(this.availableMeals);
@@ -44,32 +44,24 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    void _removeMeal(String mealId) {
-      setState(
-        () {
-          displayedMeals.removeWhere((meal) => meal.id == mealId);
-        },
-      );
-    }
-
     return Scaffold(
       appBar: AppBar(
         title: Text(categoryTitle),
       ),
       body: ListView.builder(
-          itemBuilder: (ctx, index) {
-            final meal = displayedMeals[index];
-            return MealItem(
-              id: meal.id,
-              title: meal.title,
-              affordability: meal.affordability,
-              complexity: meal.complexity,
-              duration: meal.duration,
-              imageUrl: meal.imageUrl,
-              removeItem: _removeMeal,
-            );
-          },
-          itemCount: displayedMeals.length),
+        itemBuilder: (ctx, index) {
+          final meal = displayedMeals[index];
+          return MealItem(
+            id: meal.id,
+            title: meal.title,
+            affordability: meal.affordability,
+            complexity: meal.complexity,
+            duration: meal.duration,
+            imageUrl: meal.imageUrl,
+          );
+        },
+        itemCount: displayedMeals.length,
+      ),
     );
   }
 }
