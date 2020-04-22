@@ -9,13 +9,13 @@ class MainDrawer extends StatelessWidget {
     return ListTile(
       leading: Icon(
         icon,
-        size: 26,
+        size: 24,
       ),
       title: Text(
         title,
         style: TextStyle(
           fontFamily: 'RobotoCondensed',
-          fontSize: 24,
+          fontSize: 20,
           fontWeight: FontWeight.bold,
         ),
       ),
@@ -50,14 +50,14 @@ class MainDrawer extends StatelessWidget {
             'Meals',
             Icons.restaurant,
             () {
-              Navigator.of(context).pushNamed('/');
+              Navigator.of(context).pushReplacementNamed('/');
             },
           ),
           buildListTile(
             'Filters',
             Icons.settings,
             () {
-              Navigator.of(context).pushNamed(FiltersScreen.routeName);
+              Navigator.of(context).pushReplacementNamed(FiltersScreen.routeName);
             },
           ),
         ],
